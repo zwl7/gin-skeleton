@@ -1,0 +1,39 @@
+mode: "dev"
+port: 8200
+version: "1.1.1"
+appName: "gin-skeleton-zwl"
+domain: "http://localhost:8200"
+
+log:
+  #日志级别,只会打印级别以上的。不写默认是INFO(info级别的话，不会打印debug级别的日志)
+  level: "debug" 
+  #日志存储路径123
+  filename: "./storage/logs/zap.log"
+  #在进行切割之前，日志文件的最大大小（以MB为单位）
+  max_size: 5
+  #保留旧文件的最大天数
+  max_age: 30
+  # 保留旧文件的最大个数
+  max_backups: 30
+
+mysql:
+#  host: "172.28.1.255"
+  host: "127.0.0.1"
+  port: 3306
+  user: "root"
+  password: "mysqlP+ld+1K+Dz"
+  dbname: "gin-test"
+  table_prefix: "gin_"
+  #SetMaxOpenConns设置数据库的最大打开连接数。
+  max_open_conns: 20
+  #SetMaxIdleConns设置空闲连接池中的最大连接数
+  max_idle_conns: 10
+
+redis:
+#  host: "172.28.1.254"
+  host: "127.0.0.1"
+  password: "RedisP+ld+1K+Dz"
+  port: 6379
+  db: 1
+  poolsize: 10
+  minIdleconns: 5
